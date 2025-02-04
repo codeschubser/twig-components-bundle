@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed badges on README.md. (#2)
+- Fixed badge for workflow status on README.md again.

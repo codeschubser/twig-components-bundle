@@ -1,7 +1,7 @@
 # Twig Components Bundle (experimental)
 
 ![GitHub branch status](https://img.shields.io/github/checks-status/codeschubser/twig-components-bundle/master?style=flat-square)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/codeschubser/twig-components-bundle/ci?style=flat-square)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/codeschubser/twig-components-bundle/ci.yml?style=flat-square)
 ![GitHub Release](https://img.shields.io/github/v/release/codeschubser/twig-components-bundle?style=flat-square)
 ![Codecov (with branch)](https://img.shields.io/codecov/c/github/codeschubser/twig-components-bundle/master?token=6303H9T6XZ&style=flat-square)
 ![GitHub License](https://img.shields.io/github/license/codeschubser/twig-components-bundle?style=flat-square)
