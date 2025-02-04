@@ -1,0 +1,21 @@
+{# @var \Codeschubser\Bundle\TwigComponents\Twig\Component\Alert this #}
+
+<div {{ attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) }}>
+    {%- if this.icon -%}
+        <span class="flex-shrink-0 me-3 {{ this.icon }}"></span>
+    {%- endif -%}
+
+    {# block element for flex behaviour #}
+    <div>
+        {% if this.title %}
+            <h6 class="alert-heading mb-0">{{- this.title -}}</h6>
+        {% endif %}
+        <p class="mb-0">
+            <twig:block name="content">{{- this.message -}}</twig:block>
+        </p>
+    </div>
+
+    {% if this.dismissible %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endif %}
+</div>
