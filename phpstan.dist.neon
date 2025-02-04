@@ -1,0 +1,15 @@
+includes:
+    - phpstan-baseline.dist.neon
+
+parameters:
+    level: max
+    paths:
+        - config/
+        - src/
+        - tests/
+    parallel:
+        maximumNumberOfProcesses: 4
+    bootstrapFiles:
+        - tools/.phpunit/vendor/autoload.php
+    excludePaths:
+

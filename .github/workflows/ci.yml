@@ -1,0 +1,89 @@
+name: "CI"
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+env:
+    fail-fast: true
+
+permissions:
+    contents: read
+
+jobs:
+    linters:
+        name: "${{ matrix.operating-system }} / PHP ${{ matrix.php-version }}"
+        runs-on: ${{ matrix.operating-system }}
+        continue-on-error: false
+
+        strategy:
+            matrix:
+                operating-system: [ 'ubuntu-latest' ]
+                php-version:
+                    - '8.2'
+                    - '8.3'
+
+        steps:
+            -   name: "Checkout code"
+                uses: actions/checkout@v4
+
+            -   name: "Install PHP with extensions"
+                uses: shivammathur/setup-php@v2
+                with:
+                    coverage: "pcov"
+                    extensions: "intl, mbstring, zip, xdebug"
+                    php-version: ${{ matrix.php-version }}
+                    tools: composer:v2
+
+            -   name: "Set composer cache directory"
+                id: composer-cache
+                run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+            -   name: "Cache composer"
+                uses: actions/cache@v4
+                with:
+                    path: ${{ steps.composer-cache.outputs.dir }}
+                    key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+                    restore-keys: ${{ runner.os }}-composer-
+
+            -   name: "Install dependencies"
+                run: composer install --ansi --no-interaction --no-progress
+
+            -   name: "Run PHP-CS-Fixer"
+                run: ./tools/php-cs-fixer check --using-cache=no --show-progress=none
+                env:
+                    PHP_CS_FIXER_IGNORE_ENV: 1
+
+            -   name: "Run Rector"
+                run: ./tools/rector --dry-run --clear-cache --no-progress-bar
+
+            -   name: "Run Twig-CS-Fixer"
+                run: ./tools/twig-cs-fixer lint --no-cache
+
+            -   name: "Lint Composer config"
+                run: composer validate --strict
+
+            -   name: "Lint Composer requirements"
+                run: composer check-platform-reqs
+
+            -   name: "Check if any dependencies are compromised"
+                run: composer audit
+
+            -   name: "Configure PHPUnit"
+                run: ./tools/phpunit --version
+
+            -   name: "Run PHPStan"
+                run: ./tools/phpstan analyze --no-progress
+
+            -   name: "Run PHPUnit"
+                run: ./tools/phpunit --coverage-text --coverage-xml build/coverage-xml --coverage-cobertura build/cobertura.xml
+                env:
+                    XDEBUG_MODE: coverage
+
+            -   name: "Upload coverage reports to Codecov"
+                uses: codecov/codecov-action@v5
+                with:
+                    token: ${{ secrets.CODECOV_TOKEN }}
+                    slug: codeschubser/twig-components-bundle
