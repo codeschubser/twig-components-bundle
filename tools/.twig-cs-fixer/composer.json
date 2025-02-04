@@ -1,0 +1,5 @@
+{
+    "require": {
+        "vincentlanglet/twig-cs-fixer": "^3.5"
+    }
+}
