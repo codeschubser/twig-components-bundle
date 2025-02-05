@@ -1,5 +1,7 @@
 # Variants of components
 
+Choose one of eight available color variants from [Bootstrap](https://getbootstrap.com/docs/5.3/customize/color/#theme-colors).
+
 ## Primary
 
 Main theme color.

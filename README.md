@@ -1,10 +1,9 @@
 # Twig Components Bundle (experimental)
 
-![GitHub branch status](https://img.shields.io/github/checks-status/codeschubser/twig-components-bundle/master?style=flat-square)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/codeschubser/twig-components-bundle/ci.yml?style=flat-square)
-![GitHub Tag](https://img.shields.io/github/v/tag/codeschubser/twig-components-bundle?style=flat-square)
-![Codecov (with branch)](https://img.shields.io/codecov/c/github/codeschubser/twig-components-bundle/master?token=6303H9T6XZ&style=flat-square)
-![GitHub License](https://img.shields.io/github/license/codeschubser/twig-components-bundle?style=flat-square)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/codeschubser/twig-components-bundle/ci.yml)
+![GitHub Tag](https://img.shields.io/github/v/tag/codeschubser/twig-components-bundle)
+[![codecov](https://codecov.io/gh/codeschubser/twig-components-bundle/branch/master/graph/badge.svg?token=6303H9T6XZ)](https://codecov.io/gh/codeschubser/twig-components-bundle)
+![GitHub License](https://img.shields.io/github/license/codeschubser/twig-components-bundle)
 
 A Symfony bundle for the [Twig Components](https://symfony.com/bundles/ux-twig-component/current/index.html) library.
 
@@ -23,7 +22,7 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
 
 - [Installation](docs/index.md)
 - Components
-  - Alert
+  - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with the handful of available and flexible options.*
   - Button
 
 ## Development
