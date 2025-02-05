@@ -4,7 +4,7 @@ on:
     pull_request:
     push:
         branches:
-            - main
+            - master
 
 env:
     fail-fast: true
@@ -24,6 +24,7 @@ jobs:
                 php-version:
                     - '8.2'
                     - '8.3'
+                    - '8.4'
 
         steps:
             -   name: "Checkout code"
@@ -86,4 +87,3 @@ jobs:
                 uses: codecov/codecov-action@v5
                 with:
                     token: ${{ secrets.CODECOV_TOKEN }}
-                    slug: codeschubser/twig-components-bundle
