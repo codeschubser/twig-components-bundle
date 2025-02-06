@@ -31,16 +31,20 @@ Info: [Available variants](variants.md)
 
 ~~~html
 # Type (optional)
-<twig:Button variant="danger" label="Delete" isSubmit/>
+<twig:Button variant="danger" label="Delete"/>
+<twig:Button variant="success" label="Save" type="submit"/>
+<twig:Button variant="warning" label="Reset" type="reset"/>
 
 # HTML
-<button class="btn btn-danger" type="submit">Delete</button>
+<button class="btn btn-danger" type="button">Delete</button>
+<button class="btn btn-success" type="submit">Save</button>
+<button class="btn btn-warning" type="reset">Reset</button>
 ~~~
 
 ~~~html
 # Icon (optional)
 <twig:Button variant="info" icon="bi bi-info-circle-full"/>
-<twig:Button variant="success" label="Ok" icon="bi bi-icheck"/>
+<twig:Button variant="success" label="Ok" icon="bi bi-check"/>
 
 # HTML
 <button class="btn btn-info" type="button">
