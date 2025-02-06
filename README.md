@@ -5,6 +5,9 @@
 [![codecov](https://codecov.io/gh/codeschubser/twig-components-bundle/branch/master/graph/badge.svg?token=6303H9T6XZ)](https://codecov.io/gh/codeschubser/twig-components-bundle)
 [![GitHub License](https://img.shields.io/github/license/codeschubser/twig-components-bundle)](https://github.com/codeschubser/twig-components-bundle/blob/master/LICENSE)
 
+> [!WARNING]  
+> This Bundle is experimental and subject to change in a future release.
+
 A Symfony bundle for the [Twig Components](https://symfony.com/bundles/ux-twig-component/current/index.html) library.
 
 This bundle allows you to create robust and reusable Twig components.
