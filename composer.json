@@ -44,6 +44,13 @@
         "sort-packages": true
     },
     "scripts": {
+        "ci": [
+            "@php:cs:check",
+            "@rector:check",
+            "@twig:cs:check",
+            "@stan",
+            "@test"
+        ],
         "php:cs:fix": "./tools/php-cs-fixer fix",
         "php:cs:check": "./tools/php-cs-fixer check --diff",
         "twig:cs:fix": "./tools/twig-cs-fixer fix",

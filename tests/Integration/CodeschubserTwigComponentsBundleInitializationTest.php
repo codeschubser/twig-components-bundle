@@ -32,8 +32,8 @@ final class CodeschubserTwigComponentsBundleInitializationTest extends KernelTes
 
         $this->assertTrue($container->has(Alert::class));
         $this->assertInstanceOf(Alert::class, $container->get(Alert::class));
-
     }
+
     protected static function ensureKernelShutdown(): void
     {
         $wasBooted = self::$booted;

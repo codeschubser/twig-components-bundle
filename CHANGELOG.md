@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added Twig component for buttons. #8
+
+### Changed
+
+- Changed button type from switch to config. #8
+
 ## 0.2 - 2025-02-04
 
 ### Added
@@ -21,5 +29,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed badges on README.md. (#2)
+- Fixed badges on README.md. #2
 - Fixed badge for workflow status on README.md again.

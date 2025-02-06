@@ -12,7 +12,7 @@ See [Bootstrap](https://getbootstrap.com/docs/5.3/components/alerts/) documentat
 ~~~
 
 ~~~html
-# Variants (required)
+# Variant (required)
 <twig:Alert variant="primary"/>
 <twig:Alert variant="secondary"/>
 <twig:Alert variant="info"/>
