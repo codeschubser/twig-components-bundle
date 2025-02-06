@@ -57,7 +57,7 @@ Info: [Available variants](variants.md)
 ~~~
 
 ~~~html
-# Passing additional properties (optional)
+# Passing additional attributes (optional)
 <twig:Button variant="success" icon="bi bi-check" label="Ok" class="btn-lg"/>
 
 # HTML
@@ -66,3 +66,21 @@ Info: [Available variants](variants.md)
     Ok
 </button>
 ~~~
+
+~~~html
+# Button group
+<div class="btn-group" role="group" aria-label="Basic example">
+    <twig:Button variant="success" label="Left"/>
+    <twig:Button variant="warning" label="Middle"/>
+    <twig:Button variant="danger" label="Right"/>
+</div>
+
+# HTML
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button class="btn btn-success" type="button">Left</button>
+    <button class="btn btn-warning" type="button">Middle</button>
+    <button class="btn btn-danger" type="button">Right</button>
+</div>
+~~~
+
+![Rendered](button.png "Button with icon and additional attributes")
