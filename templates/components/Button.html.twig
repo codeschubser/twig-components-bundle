@@ -1,6 +1,6 @@
 {# @var \Codeschubser\Bundle\TwigComponents\Twig\Component\Button this #}
 
-<button {{ attributes.defaults({class: this.defaultCssClass(), type: this.isSubmit ? 'submit' : 'button'}) }}>
+<button {{ attributes.defaults({class: this.defaultCssClass(), type: this.type()}) }}>
     {%- if this.icon -%}
         <span class="{%- if this.label %}me-1 {% endif -%} {{ this.icon }}"></span>
     {%- endif -%}

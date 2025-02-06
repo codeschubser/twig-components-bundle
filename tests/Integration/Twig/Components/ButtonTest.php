@@ -6,12 +6,14 @@ namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
 
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\ButtonType;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 #[CoversClass(Button::class)]
 #[CoversClass(Variant::class)]
+#[CoversClass(ButtonType::class)]
 final class ButtonTest extends AbstractComponentsTestCase
 {
     public function testComponentMount(): void
@@ -40,6 +42,19 @@ final class ButtonTest extends AbstractComponentsTestCase
         );
     }
 
+    public function testComponentTypeMountFail(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->mountTwigComponent(
+            name: Button::class,
+            data: [
+                'variant' => 'success',
+                'type' => 'foobar',
+            ],
+        );
+    }
+
     public function testComponentWithIconMount(): void
     {
         $component = $this->mountTwigComponent(
@@ -63,7 +78,8 @@ final class ButtonTest extends AbstractComponentsTestCase
             ],
         );
 
-        $this->assertCount(1, $rendered->crawler()->filter('.btn.btn-success'));
+        $this->assertCount(1, $component = $rendered->crawler()->filter('.btn.btn-success'));
+        $this->assertCount(1, $component->filter('button[type="button"]'));
     }
 
     public function testComponentAsSubmitRenders(): void
@@ -72,12 +88,26 @@ final class ButtonTest extends AbstractComponentsTestCase
             name: 'Button',
             data: [
                 'variant' => 'success',
-                'isSubmit' => true,
+                'type' => 'submit',
             ],
         );
 
         $this->assertCount(1, $component = $rendered->crawler()->filter('.btn.btn-success'));
         $this->assertCount(1, $component->filter('button[type="submit"]'));
+    }
+
+    public function testComponentAsResetRenders(): void
+    {
+        $rendered = $this->renderTwigComponent(
+            name: 'Button',
+            data: [
+                'variant' => 'secondary',
+                'type' => ButtonType::RESET,
+            ],
+        );
+
+        $this->assertCount(1, $component = $rendered->crawler()->filter('.btn.btn-secondary'));
+        $this->assertCount(1, $component->filter('button[type="reset"]'));
     }
 
     public function testComponentWithIconRenders(): void
@@ -91,5 +121,19 @@ final class ButtonTest extends AbstractComponentsTestCase
         );
 
         $this->assertCount(1, $rendered->crawler()->filter('.bi-exclamation-triangle-fill'));
+    }
+
+    public function testComponentWithAdditionalParamsRenders(): void
+    {
+        $rendered = $this->renderTwigComponent(
+            name: 'Button',
+            data: [
+                'variant' => 'warning',
+                'class' => 'btn-lg',
+            ],
+        );
+
+        $this->assertCount(1, $component = $rendered->crawler()->filter('.btn.btn-warning'));
+        $this->assertCount(1, $component->filter('.btn.btn-lg'));
     }
 }
