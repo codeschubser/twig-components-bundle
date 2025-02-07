@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed accessibility of components. 
+- Fixed documentation of alerts.
 
 ## 0.3 - 2025-02-06
 
