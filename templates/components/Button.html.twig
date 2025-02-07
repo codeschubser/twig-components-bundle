@@ -2,7 +2,7 @@
 
 <button {{ attributes.defaults({class: this.defaultCssClass(), type: this.type()}) }}>
     {%- if this.icon -%}
-        <span class="{%- if this.label %}me-1 {% endif -%} {{ this.icon }}" aria-hidden="true"></span>
+        <span class="{%- if this.label %}me-2 {% endif -%} {{ this.icon }}" aria-hidden="true"></span>
     {%- endif -%}
 
     <twig:block name="content">{{- this.label -}}</twig:block>
