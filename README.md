@@ -21,6 +21,11 @@ This bundle allows you to create robust and reusable Twig components.
 
 All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend version is v5.3 or higher. Some components can be extended with icons. [Bootstrap Icons](https://icons.getbootstrap.com/) and [Font Awesome](https://fontawesome.com/) were tested. But other icons are also possible.
 
+## Accessibility
+
+- Optional icons are hidden from the [accessibility API](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
+- Alerts are decorated by `role="alert"` to send accessible alert event to assistive technology products.
+
 ## Usage
 
 - [Installation](docs/index.md)

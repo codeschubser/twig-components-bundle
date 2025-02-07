@@ -2,17 +2,15 @@
 
 <div {{ attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) }}>
     {%- if this.icon -%}
-        <span class="flex-shrink-0 me-3 {{ this.icon }}"></span>
+        <span class="flex-shrink-0 me-3 {{ this.icon }}" aria-hidden="true"></span>
     {%- endif -%}
 
     {# block element for flex behaviour #}
     <div>
         {% if this.title %}
-            <h6 class="alert-heading mb-0">{{- this.title -}}</h6>
+            <h6 class="alert-heading">{{- this.title -}}</h6>
         {% endif %}
-        <p class="mb-0">
-            <twig:block name="content">{{- this.message -}}</twig:block>
-        </p>
+        <twig:block name="content">{{- this.message -}}</twig:block>
     </div>
 
     {% if this.dismissible %}
