@@ -1,5 +1,7 @@
 # Button
 
+![Example](button-example.png "A full example of a button") * Icon is styled by Bootstrap Icons.
+
 ~~~html
 # Twig
 <twig:Button variant="primary" label="Button"/>
@@ -7,6 +9,8 @@
 # HTML
 <button class="btn btn-primary" type="button">Button</button>
 ~~~
+
+![Variants](button-variant.png "A set of variants are available") * Variants are styled by Bootstrap.
 
 ~~~html
 # Variant (required)
@@ -48,10 +52,10 @@ Info: [Available variants](variants.md)
 
 # HTML
 <button class="btn btn-info" type="button">
-    <span class="bi bi-info-circle"></span>
+    <span class="bi bi-info-circle" aria-hidden="true"></span>
 </button>
 <button class="btn btn-success" type="button">
-    <span class="me-1 bi bi-check"></span>
+    <span class="me-2 bi bi-check" aria-hidden="true"></span>
     Ok
 </button>
 ~~~
@@ -62,7 +66,7 @@ Info: [Available variants](variants.md)
 
 # HTML
 <button class="btn btn-success btn-lg" type="button">
-    <span class="me-1 bi bi-check"></span>
+    <span class="me-2 bi bi-check" aria-hidden="true"></span>
     Ok
 </button>
 ~~~
@@ -82,5 +86,3 @@ Info: [Available variants](variants.md)
     <button class="btn btn-danger" type="button">Right</button>
 </div>
 ~~~
-
-![Rendered](button.png "Button with icon and additional attributes")
