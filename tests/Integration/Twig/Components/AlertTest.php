@@ -8,11 +8,13 @@ use Codeschubser\Bundle\TwigComponents\CodeschubserTwigComponentsBundle;
 use Codeschubser\Bundle\TwigComponents\DependencyInjection\CodeschubserTwigComponentsExtension;
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Alert;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 #[CoversClass(Alert::class)]
+#[CoversClass(Button::class)]
 #[CoversClass(Variant::class)]
 #[CoversClass(CodeschubserTwigComponentsBundle::class)]
 #[CoversClass(CodeschubserTwigComponentsExtension::class)]

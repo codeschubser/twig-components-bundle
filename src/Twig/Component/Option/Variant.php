@@ -14,4 +14,5 @@ enum Variant: string
     case DANGER = 'danger';
     case LIGHT = 'light';
     case DARK = 'dark';
+    case CLOSE = 'close';
 }
