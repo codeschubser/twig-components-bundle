@@ -7,13 +7,13 @@
 
     {# block element for flex behaviour #}
     <div>
-        {% if this.title %}
+        {%- if this.title -%}
             <h6 class="alert-heading">{{- this.title -}}</h6>
-        {% endif %}
+        {%- endif -%}
         <twig:block name="content">{{- this.message -}}</twig:block>
     </div>
 
-    {% if this.dismissible %}
+    {%- if this.dismissible -%}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    {% endif %}
+    {%- endif -%}
 </div>

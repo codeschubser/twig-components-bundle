@@ -82,6 +82,18 @@ final class ButtonTest extends AbstractComponentsTestCase
         $this->assertCount(1, $component->filter('button[type="button"]'));
     }
 
+    public function testComponentWithOutlineVariantRenders(): void
+    {
+        $rendered = $this->renderTwigComponent(
+            name: 'Button',
+            data: [
+                'variant' => 'outline-success',
+            ],
+        );
+
+        $this->assertCount(1, $component = $rendered->crawler()->filter('.btn.btn-outline-success'));
+    }
+
     public function testComponentAsSubmitRenders(): void
     {
         $rendered = $this->renderTwigComponent(

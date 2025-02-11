@@ -20,6 +20,14 @@
 <twig:Button variant="success" label="Success"/>
 <twig:Button variant="warning" label="Warning"/>
 <twig:Button variant="danger" label="Danger"/>
+
+# Outline
+<twig:Button variant="outline-primary" label="Primary"/>
+<twig:Button variant="outline-secondary" label="Secondary"/>
+<twig:Button variant="outline-info" label="Info"/>
+<twig:Button variant="outline-success" label="Success"/>
+<twig:Button variant="outline-warning" label="Warning"/>
+<twig:Button variant="outline-danger" label="Danger"/>
 ~~~
 
 Info: [Available variants](variants.md)
