@@ -31,8 +31,8 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
 - [Installation](docs/index.md)
 - Components
   - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with the handful of available and flexible options.*
-  - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more*
-  - Card
+  - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
+  - [Card](docs/cards.md) *Provide flexible content containers.*
   - Toast
 
 ## Development

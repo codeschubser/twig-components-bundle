@@ -1,6 +1,6 @@
 {# @var \Codeschubser\Bundle\TwigComponents\Twig\Component\Alert this #}
 
-<div {{ attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) }}>
+<div {{- attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) -}}>
     {%- if this.icon -%}
         <span class="flex-shrink-0 me-3 {{ this.icon }}" aria-hidden="true"></span>
     {%- endif -%}

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added `close` variant for buttons. #20
+- Added component for `card` content containers.
 
 ### Changed
 
