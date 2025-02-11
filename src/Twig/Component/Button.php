@@ -12,30 +12,26 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent(name: 'Button', template: '@CodeschubserTwigComponents/components/Button.html.twig', exposePublicProps: false)]
 final class Button implements VariantInterface
 {
-    public Variant $variant = Variant::INFO;
-    public ButtonType $type = ButtonType::BUTTON;
+    public Variant $variant;
+    public ButtonType $type;
     public ?string $label = null;
     public ?string $icon = null;
+    protected bool $isOutline = false;
 
     public function mount(string|Variant $variant, string|ButtonType $type = ButtonType::BUTTON): void
     {
+        if (\is_string($variant) && str_contains($variant, 'outline')) {
+            $this->isOutline = true;
+            $variant = substr($variant, 8);
+        }
+
         try {
             $this->variant = \is_string($variant) ? Variant::from($variant) : $variant;
         } catch (\ValueError $valueError) {
             throw new \InvalidArgumentException(
-                sprintf(
-                    'The variant "%s" is not valid. Valid values are: %s',
-                    $variant,
-                    implode(
-                        ', ',
-                        array_map(
-                            static fn (Variant $variant): string => $variant->value,
-                            Variant::cases()
-                        )
-                    )
-                ),
-                $valueError->getCode(),
-                $valueError
+                message: sprintf('The variant "%s" is not valid. Valid values are: %s', $variant, implode(', ', array_map(static fn (Variant $variant): string => $variant->value, Variant::cases()))),
+                code: $valueError->getCode(),
+                previous: $valueError
             );
         }
 
@@ -43,25 +39,19 @@ final class Button implements VariantInterface
             $this->type = \is_string($type) ? ButtonType::from($type) : $type;
         } catch (\ValueError $valueError) {
             throw new \InvalidArgumentException(
-                sprintf(
-                    'The type "%s" is not valid. Valid values are: %s',
-                    $type,
-                    implode(
-                        ', ',
-                        array_map(
-                            static fn (ButtonType $type): string => $type->value,
-                            ButtonType::cases()
-                        )
-                    )
-                ),
-                $valueError->getCode(),
-                $valueError
+                message: sprintf('The type "%s" is not valid. Valid values are: %s', $type, implode(', ', array_map(static fn (ButtonType $type): string => $type->value, ButtonType::cases()))),
+                code: $valueError->getCode(),
+                previous: $valueError
             );
         }
     }
 
     public function getDefaultCssClass(): string
     {
+        if ($this->isOutline) {
+            return sprintf('btn btn-outline-%s', $this->variant->value);
+        }
+
         return sprintf('btn btn-%s', $this->variant->value);
     }
 

@@ -11,7 +11,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent(name: 'Alert', template: '@CodeschubserTwigComponents/components/Alert.html.twig', exposePublicProps: false)]
 final class Alert implements VariantInterface
 {
-    public Variant $variant = Variant::INFO;
+    public Variant $variant;
     public ?string $message = null;
     public bool $dismissible = false;
     public ?string $title = null;
