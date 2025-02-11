@@ -62,7 +62,7 @@
         "test:unit": "./tools/phpunit --testsuite Unit",
         "test:integration": "./tools/phpunit --testsuite Integration",
         "test:coverage": "XDEBUG_MODE=coverage ./tools/phpunit --coverage-text",
-        "test:coverage:generate": "XDEBUG_MODE=coverage ./tools/phpunit --coverage-html=./reports/phpunit/coverage"
+        "test:coverage:generate": "XDEBUG_MODE=coverage ./tools/phpunit --coverage-html=./reports/phpunit/coverage --coverage-text"
     },
     "extra": {
         "cotor": {
