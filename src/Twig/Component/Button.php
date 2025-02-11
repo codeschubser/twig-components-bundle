@@ -16,13 +16,21 @@ final class Button implements VariantInterface
     public ButtonType $type;
     public ?string $label = null;
     public ?string $icon = null;
-    protected bool $isOutline = false;
+    private bool $isOutline = false;
+    private bool $isClose = false;
 
     public function mount(string|Variant $variant, string|ButtonType $type = ButtonType::BUTTON): void
     {
-        if (\is_string($variant) && str_contains($variant, 'outline')) {
-            $this->isOutline = true;
-            $variant = substr($variant, 8);
+        if (\is_string($variant)) {
+            if (str_contains($variant, 'outline')) {
+                $this->isOutline = true;
+                $variant = substr($variant, 8);
+            }
+
+            if (str_contains($variant, 'close')) {
+                $this->isClose = true;
+                $variant = Variant::PRIMARY;
+            }
         }
 
         try {
@@ -48,6 +56,10 @@ final class Button implements VariantInterface
 
     public function getDefaultCssClass(): string
     {
+        if ($this->isClose) {
+            return 'btn-close';
+        }
+
         if ($this->isOutline) {
             return sprintf('btn btn-outline-%s', $this->variant->value);
         }

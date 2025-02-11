@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `close` variant for buttons. #20
+
+### Changed
+
+- Use close button variant for `dismissible` alerts. #15
+
+### Fixed
+
+- Print code coverage as text by `composer test:coverage:generate`.
+
 ## 0.4 - 2025-02-11
 
 ### Added 
