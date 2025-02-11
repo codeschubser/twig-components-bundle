@@ -7,17 +7,20 @@ namespace Codeschubser\Bundle\TwigComponents\Twig\Component;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
+use Symfony\UX\TwigComponent\Attribute\PostMount;
 
-#[AsTwigComponent(name: 'Alert', template: '@CodeschubserTwigComponents/components/Alert.html.twig', exposePublicProps: false)]
-final class Alert implements VariantInterface
+#[AsTwigComponent(name: 'Card', template: '@CodeschubserTwigComponents/components/Card.html.twig', exposePublicProps: false)]
+final class Card implements VariantInterface
 {
-    public Variant $variant;
-    public ?string $message = null;
-    public bool $dismissible = false;
+    public ?Variant $variant = null;
     public ?string $title = null;
-    public ?string $icon = null;
+    public ?string $subtitle = null;
+    public ?string $text = null;
+    public ?string $header = null;
+    public ?string $image = null;
+    public ?string $footer = null;
 
-    public function mount(string|Variant $variant): void
+    public function mount(null|string|Variant $variant = null): void
     {
         try {
             $this->variant = \is_string($variant) ? Variant::from($variant) : $variant;
@@ -30,16 +33,20 @@ final class Alert implements VariantInterface
         }
     }
 
+    #[PostMount]
+    public function validate(): void
+    {
+        if ($this->subtitle && null === $this->title) {
+            throw new \InvalidArgumentException('Title must be set if a subtitle is defined!');
+        }
+    }
+
     public function getDefaultCssClass(): string
     {
-        $cssClass = sprintf('alert alert-%s', $this->variant->value);
+        $cssClass = 'card';
 
-        if ($this->dismissible) {
-            $cssClass .= ' alert-dismissible';
-        }
-
-        if ($this->icon || $this->title) {
-            $cssClass .= ' d-flex align-items-start';
+        if (null !== $this->variant) {
+            $cssClass .= sprintf(' text-bg-%s', $this->variant->value);
         }
 
         return $cssClass;
