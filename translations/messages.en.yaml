@@ -1,0 +1,16 @@
+# vendor:       codeschubser
+# bundle:       twig-components-bundle
+# domain:       messages
+# language:     english
+# locale:       en
+
+# top-level `codeschubser` is used to prevent existing
+# messages from another bundle from being overwritten.
+
+# property:
+#   label: `used for button label, aria-label, etc.`
+
+codeschubser:
+    action:
+        close:
+            label: 'Close'
