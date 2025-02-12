@@ -2,11 +2,12 @@
 
 <div {{- attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) -}}>
     {%- if this.icon -%}
-        <span class="flex-shrink-0 me-3 {{ this.icon }}" aria-hidden="true"></span>
+        {% from '@CodeschubserTwigComponents/abstract/macros.html.twig' import icon %}
+        {{ icon(this.icon, 'flex-shrink-1 me-2') }}
     {%- endif -%}
 
     {# block element for flex behaviour #}
-    <div>
+    <div class="flex-grow-1">
         {%- if this.title -%}
             <h6 class="alert-heading">{{- this.title -}}</h6>
         {%- endif -%}

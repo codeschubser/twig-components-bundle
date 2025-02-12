@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added Twig component for dropdowns.
+- Added `macro` for icons.
+
+### Fixed
+
+- Flex behaviour for icons.
+
 ## 0.5 - 2025-02-11
 
 ### Added
