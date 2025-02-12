@@ -142,6 +142,6 @@ final class AlertTest extends AbstractComponentsTestCase
             ],
         );
 
-        $this->assertCount(1, $rendered->crawler()->filter('.flex-shrink-0.bi-exclamation-triangle-fill'));
+        $this->assertCount(1, $rendered->crawler()->filter('.flex-shrink-1.bi-exclamation-triangle-fill'));
     }
 }

@@ -61,8 +61,8 @@ Info: [Available variants](variants.md)
 
 # HTML
 <div class="alert alert-danger d-flex align-items-start" role="alert">
-    <span class="flex-shrink-0 me-3 bi bi-info-circle-full" aria-hidden="true"></span>    
-    <div>Danger</div>
+    <span class="flex-shrink-1 me-3 bi bi-info-circle-full" aria-hidden="true"></span>    
+    <div class="flex-grow-1">Danger</div>
 </div>
 ~~~
 

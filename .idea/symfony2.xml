@@ -2,5 +2,6 @@
 <project version="4">
   <component name="Symfony2PluginSettings">
     <option name="pluginEnabled" value="true" />
+    <option name="twigBundleNamespaceSupport" value="true" />
   </component>
 </project>

@@ -24,7 +24,9 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
 ## Accessibility
 
 - Optional icons are hidden from the [accessibility API](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
-- Alerts are decorated by `role="alert"` to send accessible alert event to assistive technology products.
+- Alerts are decorated with `role="alert"` to send accessible alert event to assistive technology products.
+- Dropdowns are decorated with `aria-expanded` and `aria-current`.
+- Icons in components are decorated with `aria-hidden`.
 
 ## Usage
 
@@ -33,7 +35,9 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
   - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with the handful of available and flexible options.*
   - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
   - [Card](docs/cards.md) *Provide flexible content containers.*
-  - Toast
+  - [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
+  - Modal *TBD*
+  - Toast *TBD*
 
 ## Development
 
