@@ -15,7 +15,7 @@ This bundle allows you to create robust and reusable Twig components.
 ## Requirements
 
 - PHP 8.2 or higher
-- Symfony 6.4 or higher
+- Symfony 6.0 or higher
 
 ## Features
 
