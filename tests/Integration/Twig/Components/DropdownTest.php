@@ -7,11 +7,13 @@ namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 #[CoversClass(Dropdown::class)]
 #[CoversClass(Button::class)]
+#[CoversClass(Icon::class)]
 #[CoversClass(Dropdown\DropdownItem::class)]
 #[CoversClass(Dropdown\DropdownHeader::class)]
 #[CoversClass(Dropdown\DropdownDivider::class)]

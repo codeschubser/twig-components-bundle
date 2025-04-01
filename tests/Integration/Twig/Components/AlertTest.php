@@ -9,6 +9,7 @@ use Codeschubser\Bundle\TwigComponents\DependencyInjection\CodeschubserTwigCompo
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Alert;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -16,6 +17,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 #[CoversClass(Alert::class)]
 #[CoversClass(Button::class)]
 #[CoversClass(Variant::class)]
+#[CoversClass(Icon::class)]
 #[CoversClass(CodeschubserTwigComponentsBundle::class)]
 #[CoversClass(CodeschubserTwigComponentsExtension::class)]
 final class AlertTest extends AbstractComponentsTestCase
