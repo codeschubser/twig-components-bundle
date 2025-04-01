@@ -23,7 +23,6 @@
         "php": ">=8.2",
         "symfony/dependency-injection": "^6.0|^7.0",
         "symfony/error-handler": "^6.0|^7.0",
-        "symfony/ux-icons": "^2.23",
         "symfony/ux-twig-component": "^2.22",
         "twig/twig": "^3.8"
     },
