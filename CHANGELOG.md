@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed requirements. #28
 
+### Removed
+
+- Removed `macro` for icons.
+
 ## 0.6 - 2025-02-12
 
 ### Added
