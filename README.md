@@ -36,6 +36,7 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
   - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
   - [Card](docs/cards.md) *Provide flexible content containers.*
   - [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
+  - [Icon](docs/icon.md) *Reusable icon component*
   - Modal *TBD*
   - Toast *TBD*
 
