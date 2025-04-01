@@ -51,11 +51,11 @@
         "sort-packages": true
     },
     "scripts": {
-        "ci": [
+        "check": [
             "@php:cs:check",
             "@rector:check",
             "@twig:cs:check",
-            "@stan",
+            "@php:stan",
             "@test"
         ],
         "php:cs:fix": "./tools/php-cs-fixer fix",
@@ -64,7 +64,7 @@
         "twig:cs:check": "./tools/twig-cs-fixer check",
         "rector:fix": "./tools/rector process",
         "rector:check": "./tools/rector process --dry-run",
-        "stan": "./tools/phpstan analyze",
+        "php:stan": "./tools/phpstan analyze",
         "test": "./tools/phpunit",
         "test:unit": "./tools/phpunit --testsuite Unit",
         "test:integration": "./tools/phpunit --testsuite Integration",

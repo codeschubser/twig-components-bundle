@@ -75,8 +75,8 @@ final class DropdownTest extends AbstractComponentsTestCase
         $this->assertSame('#last', $component->filter('.dropdown-item.active')->attr('href'));
         $this->assertSame('true', $component->filter('.dropdown-item.active')->attr('aria-current'));
         $this->assertSame('_blank', $component->filter('.dropdown-item[href="#first"]')->attr('target'));
-        $this->assertSame('bi bi-star-fill me-2', $component->filter('.dropdown-item>span')->attr('class'));
-        $this->assertSame('true', $component->filter('.dropdown-item>span')->attr('aria-hidden'));
+        $this->assertSame('bi bi-star-fill', $component->filter('.dropdown-item>span.icon.me-2>i')->attr('class'));
+        $this->assertSame('true', $component->filter('.dropdown-item>span.icon>i')->attr('aria-hidden'));
         $this->assertCount(1, $component->filter('.dropdown-item-text'));
     }
 
