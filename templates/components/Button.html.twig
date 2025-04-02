@@ -2,8 +2,7 @@
 
 <button {{- attributes.defaults({class: this.defaultCssClass(), type: this.type()}) -}}>
     {%- if this.icon -%}
-        {% from '@CodeschubserTwigComponents/abstract/macros.html.twig' import icon %}
-        {{ icon(this.icon, this.label ? 'me-2') }}
+        <twig:Icon name="{{ this.icon }}" class="me-1" />
     {%- endif -%}
 
     <twig:block name="content">{{- this.label -}}</twig:block>

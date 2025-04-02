@@ -37,6 +37,7 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
   - [Breadcrumbs](docs/breadcrumbs.md) *Provide breadcrumb navigation with valid schema.org markup*
   - [Card](docs/cards.md) *Provide flexible content containers.*
   - [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
+  - [Icon](docs/icon.md) *Reusable icon component*
   - Modal *TBD*
   - Toast *TBD*
 

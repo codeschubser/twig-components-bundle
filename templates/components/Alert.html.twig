@@ -2,8 +2,7 @@
 
 <div {{- attributes.defaults({class: this.defaultCssClass(), role: 'alert'}) -}}>
     {%- if this.icon -%}
-        {% from '@CodeschubserTwigComponents/abstract/macros.html.twig' import icon %}
-        {{ icon(this.icon, 'flex-shrink-1 me-2') }}
+        <twig:Icon name="{{ this.icon }}" class="flex-shrink-1 me-2" />
     {%- endif -%}
 
     {# block element for flex behaviour #}

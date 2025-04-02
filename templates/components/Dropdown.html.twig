@@ -18,8 +18,7 @@
                     {# @var Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown\DropdownItem item #}
                     <a class="dropdown-item{%- if item.current %} active{% endif -%}" href="{{- item.link -}}" target="{{ item.target }}" {%- if item.current %} aria-current="true"{% endif -%}>
                         {%- if item.icon -%}
-                            {% from '@CodeschubserTwigComponents/abstract/macros.html.twig' import icon %}
-                            {{- icon(item.icon, 'me-2') -}}
+                            <twig:Icon name="{{ item.icon }}" class="me-2" />
                         {%- endif -%}
                         {{- item.label -}}
                     </a>
