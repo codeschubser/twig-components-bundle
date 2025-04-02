@@ -26,14 +26,15 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
 - Optional icons are hidden from the [accessibility API](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden).
 - Alerts are decorated with `role="alert"` to send accessible alert event to assistive technology products.
 - Dropdowns are decorated with `aria-expanded` and `aria-current`.
-- Icons in components are decorated with `aria-hidden`.
+- Icons in components are decorated with `aria-hidden` or `aria-label`.
 
 ## Usage
 
 - [Installation](docs/index.md)
 - Components
-  - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with the handful of available and flexible options.*
+  - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with a handful of available and flexible options.*
   - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
+  - [Breadcrumbs](docs/breadcrumbs.md) *Provide breadcrumb navigation with valid schema.org markup*
   - [Card](docs/cards.md) *Provide flexible content containers.*
   - [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
   - [Icon](docs/icon.md) *Reusable icon component*
