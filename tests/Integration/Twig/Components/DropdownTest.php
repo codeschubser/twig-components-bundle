@@ -7,11 +7,13 @@ namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 #[CoversClass(Dropdown::class)]
 #[CoversClass(Button::class)]
+#[CoversClass(Icon::class)]
 #[CoversClass(Dropdown\DropdownItem::class)]
 #[CoversClass(Dropdown\DropdownHeader::class)]
 #[CoversClass(Dropdown\DropdownDivider::class)]
@@ -75,8 +77,8 @@ final class DropdownTest extends AbstractComponentsTestCase
         $this->assertSame('#last', $component->filter('.dropdown-item.active')->attr('href'));
         $this->assertSame('true', $component->filter('.dropdown-item.active')->attr('aria-current'));
         $this->assertSame('_blank', $component->filter('.dropdown-item[href="#first"]')->attr('target'));
-        $this->assertSame('bi bi-star-fill me-2', $component->filter('.dropdown-item>span')->attr('class'));
-        $this->assertSame('true', $component->filter('.dropdown-item>span')->attr('aria-hidden'));
+        $this->assertSame('bi bi-star-fill', $component->filter('.dropdown-item>span.icon.me-2>i')->attr('class'));
+        $this->assertSame('true', $component->filter('.dropdown-item>span.icon>i')->attr('aria-hidden'));
         $this->assertCount(1, $component->filter('.dropdown-item-text'));
     }
 

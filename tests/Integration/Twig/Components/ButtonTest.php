@@ -6,6 +6,7 @@ namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
 
 use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
+use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\ButtonType;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
 use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
@@ -14,6 +15,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 #[CoversClass(Button::class)]
 #[CoversClass(Variant::class)]
 #[CoversClass(ButtonType::class)]
+#[CoversClass(Icon::class)]
 final class ButtonTest extends AbstractComponentsTestCase
 {
     public function testComponentMount(): void
