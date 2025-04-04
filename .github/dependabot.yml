@@ -2,9 +2,9 @@ version: 2
 
 updates:
     -   package-ecosystem: "composer"
-        directories:
-            - "**/*"            # Symfony
-            - "**/tools/*"      # Tools
+        # directories:
+        #    - "**/*"            # Symfony
+        #    - "**/tools/*"      # Tools
         schedule:
             interval: "weekly"
             day: "tuesday"
