@@ -20,6 +20,8 @@ updates:
                     - "major"
                     - "minor"
                     - "patch"
+        ignore:
+            - dependency-name: "roave/security-advisories"
         commit-message:
             prefix: "Composer"
             include: "scope"
