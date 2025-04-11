@@ -2,15 +2,20 @@
 
 declare(strict_types=1);
 
-$finder = new \TwigCsFixer\File\Finder();
+use TwigCsFixer\Config\Config;
+use TwigCsFixer\File\Finder;
+use TwigCsFixer\Ruleset\Ruleset;
+use TwigCsFixer\Standard\TwigCsFixer;
+
+$finder = new Finder();
 $finder
     ->in(__DIR__ . '/templates')
 ;
 
-$ruleset = new \TwigCsFixer\Ruleset\Ruleset();
-$ruleset->addStandard(new \TwigCsFixer\Standard\TwigCsFixer());
+$ruleset = new Ruleset();
+$ruleset->addStandard(new TwigCsFixer());
 
-$config = new \TwigCsFixer\Config\Config();
+$config = new Config();
 $config
     ->setRuleset($ruleset)
     ->setFinder($finder)

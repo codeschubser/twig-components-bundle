@@ -2,28 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Integration\Twig\Components;
 
-use Codeschubser\Bundle\TwigComponents\CodeschubserTwigComponentsBundle;
-use Codeschubser\Bundle\TwigComponents\DependencyInjection\CodeschubserTwigComponentsExtension;
-use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Alert;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\BootstrapTwigComponentsBundle;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\DependencyInjection\BootstrapTwigComponentsExtension;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Common\AbstractComponentsTestCase;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Alert;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Button;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Icon;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\Variant;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\VariantInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[CoversClass(Alert::class)]
-#[CoversClass(Button::class)]
-#[CoversClass(Variant::class)]
-#[CoversClass(Icon::class)]
-#[CoversClass(CodeschubserTwigComponentsBundle::class)]
-#[CoversClass(CodeschubserTwigComponentsExtension::class)]
+#[UsesClass(Button::class)]
+#[UsesClass(Variant::class)]
+#[UsesClass(Icon::class)]
+#[UsesClass(BootstrapTwigComponentsBundle::class)]
+#[UsesClass(BootstrapTwigComponentsExtension::class)]
+#[Group('alert')]
 final class AlertTest extends AbstractComponentsTestCase
 {
     public function testComponentMount(): void
     {
+        /** @var Alert $component */
         $component = $this->mountTwigComponent(
             name: Alert::class,
             data: [
@@ -97,7 +101,7 @@ final class AlertTest extends AbstractComponentsTestCase
     public function testComponentRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Alert',
+            name: Alert::class,
             data: [
                 'variant' => 'success',
             ],
@@ -110,7 +114,7 @@ final class AlertTest extends AbstractComponentsTestCase
     public function testComponentWithDismissibleRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Alert',
+            name: Alert::class,
             data: [
                 'variant' => 'warning',
                 'dismissible' => true,
@@ -124,20 +128,20 @@ final class AlertTest extends AbstractComponentsTestCase
     public function testComponentWithTitleRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Alert',
+            name: Alert::class,
             data: [
                 'variant' => 'warning',
                 'title' => 'Lorem ipsum',
             ],
         );
 
-        $this->assertCount(1, $component = $rendered->crawler()->filter('.alert-heading'));
+        $this->assertCount(1, $rendered->crawler()->filter('.alert-heading'));
     }
 
     public function testComponentWithIconRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Alert',
+            name: Alert::class,
             data: [
                 'variant' => 'warning',
                 'icon' => 'bi-exclamation-triangle-fill',

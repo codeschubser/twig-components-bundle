@@ -2,20 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Integration;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Integration\DependencyInjection;
 
-use Codeschubser\Bundle\TwigComponents\DependencyInjection\CodeschubserTwigComponentsExtension;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Alert;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\DependencyInjection\BootstrapTwigComponentsExtension;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Alert;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 
-#[CoversClass(CodeschubserTwigComponentsExtension::class)]
-final class CodeschubserTwigComponentsBundleExtensionTest extends AbstractExtensionTestCase
+#[CoversClass(BootstrapTwigComponentsExtension::class)]
+final class BootstrapTwigComponentsExtensionTest extends AbstractExtensionTestCase
 {
     public function testPlatformIsSet(): void
     {
         $this->setParameter('kernel.environment', 'test');
-        $this->setParameter('kernel.bundles', ['TwigComponentBundle' => true]);
+        $this->setParameter('kernel.bundles', [
+            'TwigComponentBundle' => true,
+            'BootstrapTwigComponentsBundle' => true,
+        ]);
         $this->load();
 
         // Just test that a random component is present
@@ -32,6 +35,6 @@ final class CodeschubserTwigComponentsBundleExtensionTest extends AbstractExtens
     }
     protected function getContainerExtensions(): array
     {
-        return [new CodeschubserTwigComponentsExtension()];
+        return [new BootstrapTwigComponentsExtension()];
     }
 }

@@ -1,12 +1,13 @@
 {
-    "name": "codeschubser/twig-components-bundle",
-    "description": "Twig Components bundle for Symfony",
+    "name": "codeschubser/bootstrap-twig-components-bundle",
+    "description": "Bootstrap Twig Components bundle for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
     "keywords": [
         "symfony",
         "twig",
         "components",
+        "bootstrap",
         "reusable",
         "codeschubser"
     ],
@@ -36,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Codeschubser\\Bundle\\TwigComponents\\": "src/"
+            "Codeschubser\\Bundle\\BootstrapTwigComponentsBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codeschubser\\Bundle\\TwigComponents\\Tests\\": "tests/"
+            "Codeschubser\\Bundle\\BootstrapTwigComponentsBundle\\Tests\\": "tests/"
         }
     },
     "conflict": {
@@ -73,8 +74,8 @@
     },
     "extra": {
         "thanks": {
-            "name": "codeschubser/twig-components-bundle",
-            "url": "https://github.com/codeschubser/twig-components-bundle"
+            "name": "codeschubser/bootstrap-twig-components-bundle",
+            "url": "https://github.com/codeschubser/bootstrap-twig-components-bundle"
         },
         "cotor": {
             "extensions": {

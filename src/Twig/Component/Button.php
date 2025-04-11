@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component;
 
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\ButtonType;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\ButtonType;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\Variant;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\VariantInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
-#[AsTwigComponent(name: 'Button', template: '@CodeschubserTwigComponents/components/Button.html.twig', exposePublicProps: false)]
+#[AsTwigComponent(name: 'Button', template: '@BootstrapTwigComponents/components/Button.html.twig', exposePublicProps: false)]
 final class Button implements VariantInterface
 {
     public Variant $variant;

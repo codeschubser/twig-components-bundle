@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed Dependabot configuration.
 
+### Changed
+
+- [BC] Rename bundle. #43
+
 ## 0.7 - 2025-04-02
 
 ### Added

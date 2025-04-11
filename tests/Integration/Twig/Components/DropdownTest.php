@@ -2,22 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Integration\Twig\Components;
 
-use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Button;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Icon;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Common\AbstractComponentsTestCase;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Button;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Dropdown;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Icon;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[CoversClass(Dropdown::class)]
-#[CoversClass(Button::class)]
-#[CoversClass(Icon::class)]
 #[CoversClass(Dropdown\DropdownItem::class)]
 #[CoversClass(Dropdown\DropdownHeader::class)]
 #[CoversClass(Dropdown\DropdownDivider::class)]
 #[CoversClass(Dropdown\DropdownText::class)]
+#[UsesClass(Button::class)]
+#[UsesClass(Icon::class)]
+#[Group('dropdown')]
 final class DropdownTest extends AbstractComponentsTestCase
 {
     public function testComponentMount(): void
@@ -58,7 +61,7 @@ final class DropdownTest extends AbstractComponentsTestCase
     public function testComponentRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Dropdown',
+            name: Dropdown::class,
             data: [
                 'items' => [
                     new Dropdown\DropdownHeader(label: 'Item 1'),
@@ -85,7 +88,7 @@ final class DropdownTest extends AbstractComponentsTestCase
     public function testComponentDropUpRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Dropdown',
+            name: Dropdown::class,
             data: [
                 'isDropUp' => true,
                 'items' => [
@@ -100,7 +103,7 @@ final class DropdownTest extends AbstractComponentsTestCase
     public function testComponentRightAlignedMenuRenders(): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Dropdown',
+            name: Dropdown::class,
             data: [
                 'isRightAligned' => true,
                 'items' => [
@@ -116,7 +119,7 @@ final class DropdownTest extends AbstractComponentsTestCase
     public function testComponentVariantRenders(string $variant): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Dropdown',
+            name: Dropdown::class,
             data: [
                 'variant' => $variant,
                 'items' => [

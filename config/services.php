@@ -15,7 +15,7 @@ return static function(ContainerConfigurator $configurator): void {
     ;
 
     $services
-        ->load('Codeschubser\\Bundle\\TwigComponents\\', '../src/*')
+        ->load('Codeschubser\\Bundle\\BootstrapTwigComponentsBundle\\', '../src/*')
         ->exclude('../src/{DependencyInjection}')
     ;
 };

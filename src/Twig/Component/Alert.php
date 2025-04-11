@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component;
 
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\Variant;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\VariantInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 
-#[AsTwigComponent(name: 'Alert', template: '@CodeschubserTwigComponents/components/Alert.html.twig', exposePublicProps: false)]
+#[AsTwigComponent(name: 'Alert', template: '@BootstrapTwigComponents/components/Alert.html.twig', exposePublicProps: false)]
 final class Alert implements VariantInterface
 {
     public Variant $variant;

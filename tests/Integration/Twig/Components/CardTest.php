@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Integration\Twig\Components;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Integration\Twig\Components;
 
-use Codeschubser\Bundle\TwigComponents\Tests\Common\AbstractComponentsTestCase;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Card;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Common\AbstractComponentsTestCase;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Card;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\VariantInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
 #[CoversClass(Card::class)]
+#[Group('card')]
 final class CardTest extends AbstractComponentsTestCase
 {
     public function testComponentMount(): void
@@ -51,7 +53,7 @@ final class CardTest extends AbstractComponentsTestCase
     public function testComponentRenders(?string $title = null, ?string $subtitle = null, ?string $text = null): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Card',
+            name: Card::class,
             data: [
                 'title' => $title,
                 'subtitle' => $subtitle,
@@ -89,7 +91,7 @@ final class CardTest extends AbstractComponentsTestCase
     public function testComponentVariantRenders(string $variant): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Card',
+            name: Card::class,
             data: [
                 'variant' => $variant,
             ]
@@ -115,7 +117,7 @@ final class CardTest extends AbstractComponentsTestCase
     public function testComponentContentRenders(?string $header = null, ?string $footer = null, ?string $image = null): void
     {
         $rendered = $this->renderTwigComponent(
-            name: 'Card',
+            name: Card::class,
             data: [
                 'header' => $header,
                 'footer' => $footer,

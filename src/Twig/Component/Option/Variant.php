@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component\Option;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option;
 
 enum Variant: string
 {
