@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Common;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Common;
 
 use PHPUnit\Framework\Attributes\After;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Integration;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Integration;
 
-use Codeschubser\Bundle\TwigComponents\CodeschubserTwigComponentsBundle;
-use Codeschubser\Bundle\TwigComponents\DependencyInjection\CodeschubserTwigComponentsExtension;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Alert;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\BootstrapTwigComponentsBundle;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\DependencyInjection\BootstrapTwigComponentsExtension;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Alert;
 use Nyholm\BundleTest\TestKernel;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -14,9 +14,9 @@ use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\UX\TwigComponent\TwigComponentBundle;
 
-#[CoversClass(CodeschubserTwigComponentsBundle::class)]
-#[CoversClass(CodeschubserTwigComponentsExtension::class)]
-final class CodeschubserTwigComponentsBundleInitializationTest extends KernelTestCase
+#[CoversClass(BootstrapTwigComponentsBundle::class)]
+#[CoversClass(BootstrapTwigComponentsExtension::class)]
+final class BootstrapTwigComponentsBundleInitializationTest extends KernelTestCase
 {
     protected function tearDown(): void
     {
@@ -58,7 +58,7 @@ final class CodeschubserTwigComponentsBundleInitializationTest extends KernelTes
         $kernel = parent::createKernel($options);
         $kernel->addTestBundle(TwigBundle::class);
         $kernel->addTestBundle(TwigComponentBundle::class);
-        $kernel->addTestBundle(CodeschubserTwigComponentsBundle::class);
+        $kernel->addTestBundle(BootstrapTwigComponentsBundle::class);
         $kernel->handleOptions($options);
         $kernel->setClearCacheAfterShutdown(true);
 

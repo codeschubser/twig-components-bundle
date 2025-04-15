@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component;
 
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\VariantInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\Variant;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\VariantInterface;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PostMount;
 
-#[AsTwigComponent(name: 'Card', template: '@CodeschubserTwigComponents/components/Card.html.twig', exposePublicProps: false)]
+#[AsTwigComponent(name: 'Card', template: '@BootstrapTwigComponents/components/Card.html.twig', exposePublicProps: false)]
 final class Card implements VariantInterface
 {
     public ?Variant $variant = null;

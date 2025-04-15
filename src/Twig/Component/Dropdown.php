@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component;
 
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown\DropdownItemInterface;
-use Codeschubser\Bundle\TwigComponents\Twig\Component\Option\Variant;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Dropdown\DropdownItemInterface;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Option\Variant;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PostMount;
 
-#[AsTwigComponent(name: 'Dropdown', template: '@CodeschubserTwigComponents/components/Dropdown.html.twig', exposePublicProps: false)]
+#[AsTwigComponent(name: 'Dropdown', template: '@BootstrapTwigComponents/components/Dropdown.html.twig', exposePublicProps: false)]
 final class Dropdown
 {
     public Variant $variant;

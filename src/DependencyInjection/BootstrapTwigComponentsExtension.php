@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\DependencyInjection;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 
-final class CodeschubserTwigComponentsExtension extends Extension implements PrependExtensionInterface
+final class BootstrapTwigComponentsExtension extends Extension implements PrependExtensionInterface
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
@@ -30,12 +30,18 @@ final class CodeschubserTwigComponentsExtension extends Extension implements Pre
             throw new \LogicException('TwigComponentBundle must be registered!');
         }
 
-        $config = ['defaults' => ['Codeschubser\Bundle\TwigComponents\\' => '@CodeschubserTwigComponents/components']];
-        $container->prependExtensionConfig('twig_component', $config);
+        $container->prependExtensionConfig('twig_component', [
+            'defaults' => [
+                'Codeschubser\\Bundle\\BootstrapTwigComponentsBundle\\Twig\\Component\\' => [
+                    'template_directory' => '@BootstrapTwigComponentsBundle/components',
+                    'name_prefix' => 'cs',
+                ],
+            ],
+        ]);
     }
 
     public function getAlias(): string
     {
-        return 'codeschubser_twig_components';
+        return 'codeschubser_bootstrap_twig_components_bundle';
     }
 }

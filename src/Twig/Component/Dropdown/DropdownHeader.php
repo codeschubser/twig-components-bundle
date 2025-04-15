@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Twig\Component\Dropdown;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Twig\Component\Dropdown;
 
 final readonly class DropdownHeader implements DropdownItemInterface
 {

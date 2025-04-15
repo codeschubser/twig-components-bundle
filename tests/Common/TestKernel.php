@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeschubser\Bundle\TwigComponents\Tests\Common;
+namespace Codeschubser\Bundle\BootstrapTwigComponentsBundle\Tests\Common;
 
-use Codeschubser\Bundle\TwigComponents\CodeschubserTwigComponentsBundle;
+use Codeschubser\Bundle\BootstrapTwigComponentsBundle\BootstrapTwigComponentsBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -27,7 +27,7 @@ final class TestKernel extends Kernel
             new FrameworkBundle(),
             new TwigBundle(),
             new TwigComponentBundle(),
-            new CodeschubserTwigComponentsBundle(),
+            new BootstrapTwigComponentsBundle(),
         ];
     }
 
