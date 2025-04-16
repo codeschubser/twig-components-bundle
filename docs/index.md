@@ -3,7 +3,7 @@
 Run the following command to install:
 
 ```shell
-$ composer require codeschubser/twig-components-bundle
+$ composer require codeschubser/bootstrap-twig-components-bundle
 ```
 
 If you use `Symfony Flex` in your application, you are ready.
@@ -20,8 +20,8 @@ file and add the following:
 ```php
 return [
     // ...
-    Codeschubser\Bundle\TwigComponents\CodeschubserTwigComponentsBundle::class => ['all' => true],
-    Symfony\UX\TwigComponent\TwigComponentBundle::class => ['all' => true],
+    Codeschubser\Bundle\BootstrapTwigComponentsBundle\BootstrapTwigComponentsBundle::class => ['all' => true],
+    // ...
 ];
 ```
 

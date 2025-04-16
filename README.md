@@ -1,4 +1,4 @@
-# Twig Components Bundle (experimental)
+# Bootstrap Twig Components Bundle (experimental)
 
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/codeschubser/twig-components-bundle/ci.yml)](https://github.com/codeschubser/twig-components-bundle/actions/workflows/ci.yml)
 [![GitHub Tag](https://img.shields.io/github/v/tag/codeschubser/twig-components-bundle)](https://github.com/codeschubser/twig-components-bundle/tags)
@@ -32,18 +32,22 @@ All components are [Bootstrap](https://getbootstrap.com/) ready. Recommend versi
 
 - [Installation](docs/index.md)
 - Components
-  - [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with a handful of available and flexible options.*
-  - [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
-  - [Breadcrumbs](docs/breadcrumbs.md) *Provide breadcrumb navigation with valid schema.org markup*
-  - [Card](docs/cards.md) *Provide flexible content containers.*
-  - [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
-  - [Icon](docs/icon.md) *Reusable icon component*
-  - Modal *TBD*
-  - Toast *TBD*
+    - [x] [Alert](docs/alert.md) *Provide contextual feedback messages for typical user actions with a handful of available and flexible options.*
+    - [x] [Button](docs/button.md) *Provide buttons with support for multiple variants, icon, states, and more.*
+    - [x] [Breadcrumbs](docs/breadcrumbs.md) *Provide breadcrumb navigation with valid schema.org markup*
+    - [x] [Card](docs/cards.md) *Provide flexible content containers.*
+    - [x] [Dropdown](docs/dropdown.md) *Toggleable and contextual overlays.*
+    - [x] [Icon](docs/icon.md) *Reusable icon component*
+    - [ ] Modal *TBD*
+    - [ ] Toast *TBD*
 
 ## Development
 
-TBD
+During development, composer provides a large number of user-specific scripts that are intended to ensure code quality, among other things. A list and the corresponding description can be called up via `composer list`. These scripts are also used in the Github workflows.
+
+## Contributing
+
+If you want to contribute to the project and make it better, your help is very welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
 
 ## License
 
